@@ -7,7 +7,7 @@ RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/r
 	apk add --update --no-cache bash curl confd@testing
 
 # Create vertx user
-RUN mkdir /app/conf && \
+RUN mkdir -p /app/conf && \
     addgroup -g 1000 vertx && \
     adduser -u 1000 -G vertx -D vertx && \
     chown -R vertx:vertx /app
